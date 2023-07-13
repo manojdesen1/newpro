@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 7.4
+    commands:
+      - echo "Installing dependencies..."
+      - composer install
+
+  pre_build:
+    commands:
+      - echo "Running pre-build steps..."
+      # Add any pre-build commands or scripts here
+
+  build:
+    commands:
+      - echo "Building the application..."
+      # Add build commands or scripts here, such as running tests, compiling assets, etc.
+
+  post_build:
+    commands:
+      - echo "Running post-build steps..."
+      # Add any post-build commands or scripts here
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
+  name: my-app-build-artifact
